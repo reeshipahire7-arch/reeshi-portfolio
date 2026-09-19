@@ -1,4 +1,4 @@
-          name: Deploy Portfolio to S3
+name: Deploy Portfolio to S3
 
 on:
   push:
@@ -22,4 +22,5 @@ jobs:
 
       - name: Deploy website to S3
         run: |
-          aws s3 sync . s3://reeshi-portfolio-2026 --delete
+          aws s3 sync . s3://reeshi-portfolio-2026  --delete --exclude ".git/*" --exclude ".github/*"
+         
